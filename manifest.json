@@ -1,0 +1,10 @@
+{
+  "id": "splitter",
+  "name": "Splitter",
+  "version": "1.0.0",
+  "minAppVersion": "1.4.0",
+  "description": "Split the current markdown note at the cursor into a new note.",
+  "author": "Austen",
+  "authorUrl": "",
+  "isDesktopOnly": false
+}
