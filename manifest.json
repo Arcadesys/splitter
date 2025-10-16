@@ -1,10 +1,10 @@
 {
-  "id": "splitter",
-  "name": "Splitter",
+  "id": "ulysses-style-splits",
+  "name": "Ulysses-style splits",
   "version": "1.0.1",
   "minAppVersion": "1.4.0",
-  "description": "Split the current markdown note at the cursor into a new note.",
+  "description": "Split the current markdown note at the cursor into a new note, Ulysses-style.",
   "author": "Austen",
-  "authorUrl": "",
+  "authorUrl": "https://github.com/Arcadesys",
   "isDesktopOnly": false
 }

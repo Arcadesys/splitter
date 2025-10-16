@@ -1,95 +1,91 @@
-# Splitter — Obsidian Note-Splitting Plugin
+# Ulysses-style splits — Obsidian Note-Splitting Plugin
 
-A lightweight Obsidian plugin that lets you **split a note at the cursor** into two Markdown files, in Ulysses-style fashion.  
-Inspired by “Ulysses” workflows, but ultra-minimal and customizable.
+A lightweight Obsidian plugin that allows you to **split a note at the cursor position** into two separate Markdown files, inspired by Ulysses-style workflows.
 
----
+## Purpose
 
-## 🚀 Features
+The Ulysses-style splits plugin solves the common problem of having long notes that need to be broken into smaller, more manageable pieces. Instead of manually copying and pasting content, this plugin automates the process of splitting a note at your current cursor position, creating a seamless workflow for organizing your thoughts.
 
-- Split your current note **at cursor position** into two files  
-- Automatically names the new file as `original-basename-part2.md`, `part3`, etc.  
-- Opens the new note in a split/adjacent pane for seamless continuation  
-- Command palette support + keyboard shortcut (**⌘ ⇧ D** / **Ctrl ⇧ D**)  
-- Minimal dependencies and easy to extend (auto-linking, prompts, etc.)
+## Features
 
----
+- **Split at cursor**: Divide your current note exactly where your cursor is positioned
+- **Smart naming**: Automatically names the new file as `original-basename split.md`
+- **Seamless workflow**: Opens the new note in an adjacent pane for immediate editing
+- **Keyboard shortcut**: Quick access via **⌘⇧D** (Mac) or **Ctrl⇧D** (Windows/Linux)
+- **Context menu**: Right-click any markdown file to split it
+- **Cross-platform**: Works on Windows, macOS, Linux, and mobile devices
 
-## 🛠 Installation & Setup
+## Installation
 
-1. Clone or download this repo into your Obsidian `.obsidian/plugins/splitter` folder.  
-2. Enable “Safe Mode” off (if needed) and turn on **Splitter** in Community Plugins.  
-3. The command **“Split note at cursor”** will appear in the Command Palette.  
-4. Use the shortcut **⌘ ⇧ D** (Mac) or **Ctrl ⇧ D** (Windows) to split immediately.
+### From Community Plugins (Recommended)
+1. Open Obsidian Settings
+2. Go to Community Plugins and disable Safe Mode
+3. Browse and search for "Ulysses-style splits"
+4. Install and enable the plugin
 
----
+### Manual Installation
+1. Download the latest release from GitHub
+2. Extract the files to your vault's `.obsidian/plugins/ulysses-style-splits/` folder
+3. Enable the plugin in Obsidian's Community Plugins settings
 
-## 🔧 How It Works
+## Usage
 
-When you invoke the split:
+### Basic Usage
+1. Open any Markdown note in Obsidian
+2. Position your cursor where you want to split the note
+3. Use one of these methods:
+   - **Keyboard shortcut**: Press **⌘⇧D** (Mac) or **Ctrl⇧D** (Windows/Linux)
+   - **Command palette**: Press **⌘P** (Mac) or **Ctrl+P** (Windows/Linux) and search for "Split File at Cursor"
+   - **Context menu**: Right-click the file tab or in the file explorer and select "Split File at Cursor"
 
-- The plugin reads the active note’s content.  
-- Finds the cursor offset and divides the text into **before** + **after**.  
-- Replaces the original note with the “before” text.  
-- Creates a new note in the same folder with the “after” text.  
-- Opens the new note side-by-side for immediate editing.
+### What Happens
+- The original note keeps everything **before** the cursor position
+- A new note is created with everything **after** the cursor position
+- The new note opens in a split pane for immediate editing
+- Both files are saved automatically
 
-You can build on this—examples:  
-- Auto-insert a link at the end of the first note → “Continue in Part 2 →”  
-- Prompt for a custom filename instead of auto `partN`  
-- Add YAML header metadata (e.g. `split_from: original_file`)  
-- UI options: choose whether to open in new pane, focus etc.
+### Example
+**Before splitting** (`My Long Note.md`):
+```markdown
+# Introduction
+This is the beginning of my note.
 
----
+# Main Content
+This is where I want to split.
+This content will go to a new file.
+```
 
-## ⚙️ Configuration / Customization (ideas)
+**After splitting**:
+- `My Long Note.md` contains:
+```markdown
+# Introduction
+This is the beginning of my note.
 
-- Change or remove the shortcut  
-- Let users choose how file-naming works  
-- Toggle auto-link insertion  
-- Support splitting by headings (section splits)  
-- Undo behavior or revision history compatibility  
+# Main Content
+```
 
----
+- `My Long Note split.md` contains:
+```markdown
+This is where I want to split.
+This content will go to a new file.
+```
 
-## 🧪 Example Use Case
+## Compatibility
 
-1. Open a large journal entry or a long-form note.  
-2. Cursor somewhere in the middle.  
-3. Hit `⌘ ⇧ D`.  
-4. You’re immediately dropped into the second half, ready to continue writing.  
-5. The first half remains intact, and the two files live in your vault side by side.
+- **Obsidian version**: Requires Obsidian 1.4.0 or higher
+- **Platforms**: Windows, macOS, Linux, Android, iOS
+- **File types**: Works with all Markdown (.md) files
 
----
+## Troubleshooting
 
-## ⚖️ Limitations & Caveats
+- **"No Markdown note is active"**: Ensure you have a Markdown file open and active
+- **"Cursor is at the end of the note"**: Move your cursor to an earlier position in the note
+- **Plugin not working**: Try disabling and re-enabling the plugin in settings
 
-- It’s a very **simple split**, not semantic (i.e. won’t automatically split at headings or logical breaks)  
-- Doesn’t by default insert links—unless you extend it  
-- If your vault has weird folder permissions or filenames with conflicts, you may need to handle those edge cases  
+## License
 
----
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🧠 Why This Exists (Philosophy)
+## Support
 
-You don’t always need a full refactor engine — sometimes all you want is **“break here and keep writing.”** This plugin is your “paper cut” version of that power: sharp, precise, low friction.  
-
-Use it to break notes into digestible chunks, reorganize your vault flow, or just avoid scrolling nightmares.
-
----
-
-## ✨ Contribute & Extend
-
-Pull requests, feature ideas, and bug reports are welcome. Some interesting open ideas:
-
-- Auto-link the two note halves  
-- Ask for filename when splitting  
-- Offer “split at heading” modes  
-- User preferences UI  
-- Better conflict detection for existing file names
-
----
-
-## 📄 License
-
-[MIT License](LICENSE) — use, modify, and share freely.
+If you encounter any issues or have feature requests, please [open an issue on GitHub](https://github.com/Arcadesys/ulysses-style-splits/issues).

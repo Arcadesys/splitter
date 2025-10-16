@@ -21,7 +21,7 @@ module.exports = class SplitterPlugin extends Plugin {
 
         if (!checking) {
           this.splitAtCursor(view).catch((error) => {
-            console.error('Splitter plugin failed to split note', error);
+            console.error('Ulysses-style splits plugin failed to split note', error);
             new Notice('Unable to split the note. Check the console for details.');
           });
         }
@@ -54,7 +54,7 @@ module.exports = class SplitterPlugin extends Plugin {
               }
 
               this.splitAtCursor(view).catch((error) => {
-                console.error('Splitter plugin failed to split note', error);
+                console.error('Ulysses-style splits plugin failed to split note', error);
                 new Notice('Unable to split the note. Check the console for details.');
               });
             });
@@ -95,7 +95,7 @@ module.exports = class SplitterPlugin extends Plugin {
 
     await this.app.vault.modify(newFile, after);
 
-    const leaf = this.app.workspace.getLeaf(false);
+    const leaf = this.app.workspace.getLeaf('split');
     await leaf.openFile(newFile);
 
     new Notice(`Split note into "${file.name}" and "${newFile.name}".`);
