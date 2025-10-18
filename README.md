@@ -13,6 +13,9 @@ The Ulysses-style splits plugin solves the common problem of having long notes t
 - **Seamless workflow**: Opens the new note in an adjacent pane for immediate editing
 - **Keyboard shortcut**: Quick access via **⌘⇧D** (Mac) or **Ctrl⇧D** (Windows/Linux)
 - **Context menu**: Right-click any markdown file to split it
+- **Pending Changes Sidebar**: Review and apply additions/deletions with a single click
+- **Mark Changes**: Select text and mark it as an addition or deletion for later review
+- **Apply/Reject Changes**: Use checkmarks in the sidebar to apply or reject pending changes
 - **Cross-platform**: Works on Windows, macOS, Linux, and mobile devices
 
 ## Installation
@@ -30,13 +33,29 @@ The Ulysses-style splits plugin solves the common problem of having long notes t
 
 ## Usage
 
-### Basic Usage
+### Split Files at Cursor
 1. Open any Markdown note in Obsidian
 2. Position your cursor where you want to split the note
 3. Use one of these methods:
    - **Keyboard shortcut**: Press **⌘⇧D** (Mac) or **Ctrl⇧D** (Windows/Linux)
    - **Command palette**: Press **⌘P** (Mac) or **Ctrl+P** (Windows/Linux) and search for "Split File at Cursor"
    - **Context menu**: Right-click the file tab or in the file explorer and select "Split File at Cursor"
+
+### Manage Additions and Deletions
+1. **Mark Changes**:
+   - Select text you want to mark as an addition or deletion
+   - Open the command palette (**⌘P** / **Ctrl+P**)
+   - Choose "Mark Selection as Addition" or "Mark Selection as Deletion"
+
+2. **Review Changes**:
+   - Open the command palette and run "Show Pending Changes"
+   - A sidebar will appear showing all pending additions and deletions
+   - Each change displays a preview of the content
+
+3. **Apply or Reject**:
+   - Click the **✓ Apply** button to apply the change to your document
+   - Click the **✗ Reject** button to dismiss the change without applying it
+   - Changes are applied/removed one at a time for precise control
 
 ### What Happens
 - The original note keeps everything **before** the cursor position
